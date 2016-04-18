@@ -49,9 +49,9 @@ class AvatarDisplay extends Setup
 
     function getUser($id_or_email)
     {
+        $user = null;
         if (is_numeric($id_or_email)) {
             $user = get_user_by('id' , (int) $id_or_email);
-
         } elseif (is_object($id_or_email)) {
             if (!empty($id_or_email->user_id)) {
                 $user = get_user_by('id' , (int) $id_or_email->user_id);
